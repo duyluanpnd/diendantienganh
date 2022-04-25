@@ -11,12 +11,6 @@
             </th>
             <th>#</th>
             <th>Tên</th>
-            <th class="hidden-480">Giới tính</th>
-
-            <th>
-                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                Ngày sinh
-            </th>
             <th class="hidden-480">Vị trí</th>
 
             <th></th>
@@ -37,8 +31,6 @@
                 <a href="tables.html#">{{$admin->id}}</a>
             </td>
             <td>{{$admin->name}}</td>
-            <td class="hidden-480">{{$admin->gender}}</td>
-            <td>{{$admin->birthday}}</td>
 
             <td class="hidden-480">
                 <span class="label label-sm label-warning">
