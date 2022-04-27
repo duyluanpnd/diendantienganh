@@ -60,6 +60,7 @@ class AdminController extends Controller
             $user->username = $request->username;
             $user->password = $request->password;
             $user->name = $request->name;
+            $user->email = $request->email;
             $user->save();
 
             return redirect()->route('login');

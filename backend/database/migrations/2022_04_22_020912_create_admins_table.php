@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('username', 250);
             $table->string('password', 250);
             $table->string('name', 250);
+            $table->string('email', 250);
             $table->integer('level')->default(0);
             $table->timestamps();
         });
