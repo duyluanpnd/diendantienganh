@@ -3,24 +3,24 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{asset('backend/images/favicon.ico')}}" rel="icon" type="image/x-icon" />
+    <link href="{{asset('images/favicon.ico')}}" rel="icon" type="image/x-icon" />
     <title>DIỄN ĐÀN TIẾNG ANH</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <link rel="stylesheet" href="{{asset('backend/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('backend/css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('backend/css/login.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/login.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <link href="{{asset('backend/css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" />
 </head>
 <body class="webp_support">
     <header>
-        <div class="pn-quancao pn-image"><img src="{{asset('backend/images/banner_top.jpg')}}" alt="" /></div>
+        <div class="pn-quancao pn-image"><img src="{{asset('images/banner_top.jpg')}}" alt="" /></div>
         <div class="pn-header">
             <div class="container">
-                <a href="#" class="pn-logo"><img src="{{asset('backend/images/logo.png')}}" alt="DIỄN ĐÀN TIẾNG ANH" /></a>
+                <a href="#" class="pn-logo"><img src="{{asset('images/logo.png')}}" alt="DIỄN ĐÀN TIẾNG ANH" /></a>
                 <div class="pn-header-right">
                     <button class="pn-icon-menu">
                         <span></span><span></span><span></span>
@@ -104,10 +104,11 @@
         <div class="pn-wrapper-login">
             <div class="container">
                 <div class="pn-content-login">
-                    <form action="{{route('process_login')}}">
+                    <form action="{{route('process_login')}}" method="post">
+                        @csrf
                         <h2 class="pn-title">Đăng nhập tài khoản</h2>
-                        <p class="text-center"><a href="#" class="pn-logo"><img src="{{asset('backend/images/logo.png')}}" alt="" /></a></p>
-                        <p><input type="text" name="name" class="form-control" placeholder="Tên tài khoản hoặc Email"></p>
+                        <p class="text-center"><a href="#" class="pn-logo"><img src="{{asset('images/logo.png')}}" alt="" /></a></p>
+                        <p><input type="text" name="username" class="form-control" placeholder="Tên tài khoản hoặc Email"></p>
                         <p><input type="password" name="password" class="form-control" placeholder="Mật khẩu"></p>
                         <p class="text-right"><a href="#">Quên mật khẩu</a></p>
                         <p><button type="submit" class="pn-button">Đăng nhập</button></p>
@@ -126,7 +127,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
-                    <a href="#" class="pn-logo-ft"><img src="{{asset('backend/images/logo.png')}}" alt="Diễn đàn tiếng anh" /></a>
+                    <a href="#" class="pn-logo-ft"><img src="{{asset('images/logo.png')}}" alt="Diễn đàn tiếng anh" /></a>
                 </div>
                 <div class="col-sm-4 col-xs-6">
                     <h6 class="pn-title-ft">Diễn đàn tiếng Anh</h6>
