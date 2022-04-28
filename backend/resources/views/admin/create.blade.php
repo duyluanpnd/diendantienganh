@@ -19,14 +19,6 @@
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email </label>
-
-        <div class="col-sm-9">
-            <input type="text" id="form-field-1" placeholder="Enter email ..." class="col-xs-10 col-sm-5" name="email"/>
-        </div>
-    </div>
-
-    <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Password </label>
 
         <div class="col-sm-9">
