@@ -17,7 +17,7 @@ class AdminController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(): View|Factory|Application
+    public function index()
     {
         $admins = Admin::all();
         return view('admin.index',[
@@ -30,7 +30,7 @@ class AdminController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function create(): View|Factory|Application
+    public function create()
     {
         return view('admin.create');
     }
@@ -84,7 +84,7 @@ class AdminController extends Controller
      * @param  Admin  $admin
      * @return Application|Factory|View
      */
-    public function edit(Admin $admin): View|Factory|Application
+    public function edit(Admin $admin)
     {
         return view('admin.edit');
     }
@@ -96,7 +96,7 @@ class AdminController extends Controller
      * @param  Admin  $admin
      * @return Application|Factory|View
      */
-    public function update(UpdateAdminRequest $request, Admin $admin): Application|Factory|View
+    public function update(UpdateAdminRequest $request, Admin $admin)
     {
         try {
             $user = Admin::query()
