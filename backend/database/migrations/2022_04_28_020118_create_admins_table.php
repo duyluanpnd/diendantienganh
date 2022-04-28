@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name', 250);
             $table->string('email', 250);
             $table->integer('level')->default(0);
+            $table->string('google_id')->nullable();
             $table->timestamps();
         });
     }

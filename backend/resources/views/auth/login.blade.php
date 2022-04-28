@@ -114,7 +114,7 @@
                         <p><button type="submit" class="pn-button">Đăng nhập</button></p>
                         <div class="pn-login-google">
                             <p><span>Hoặc</span></p>
-                            <p><a href="#" class="pn-login-gg"><span></span>Đăng nhập bằng Google</a></p>
+                            <p><a href="{{route('google')}}" class="pn-login-gg"><span></span>Đăng nhập bằng Google</a></p>
                             <p><a href="#" class="pn-login-fb"><span></span>Đăng nhập bằng Facebook</a></p>
                         </div>
                         <p class="text-center" style="font-size: 13px;margin-top: 20px">Chưa có tài khoản? <a href="#" style="color: #0011f3;">Đăng ký</a></p>

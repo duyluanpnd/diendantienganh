@@ -7,7 +7,8 @@
     use App\Http\Middleware\CheckLoginMiddleware;
     use App\Http\Middleware\CheckSuperAdminMiddleWare;
     use App\Http\Controllers\ChangePasswordController;
-    use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\googleController;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -35,3 +36,9 @@ Route::group([
     });
 
 });
+Route::post('google', [googleController::class, 'redirectToGoogle'], function(){
+
+})->name('google');
+Route::post('google/callback', [googleController::class, 'handdleGoogleCallBack'], function(){
+
+})->name('googleCallBack');
