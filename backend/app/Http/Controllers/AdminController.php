@@ -52,15 +52,15 @@ class AdminController extends Controller
             $message = "wrong answer";
             echo "<script type='text/javascript'>alert('$message');</script>";
 
-            return redirect()->route('add_user');
+            return redirect()->route('admins.create');
 
         } catch (\Throwable $th) {
             //throw $th;
             $user = new Admin;
             $user->username = $request->username;
             $user->password = $request->password;
-            $user->name = $request->name;
             $user->email = $request->email;
+            $user->name = $request->name;
             $user->save();
 
             return redirect()->route('login');
@@ -94,9 +94,9 @@ class AdminController extends Controller
      *
      * @param  UpdateAdminRequest  $request
      * @param  Admin  $admin
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function update(UpdateAdminRequest $request, Admin $admin)
+    public function update(UpdateAdminRequest $request, Admin $admin): RedirectResponse
     {
         try {
             $user = Admin::query()
@@ -107,7 +107,7 @@ class AdminController extends Controller
             // $user->update(['password' => $request->get('newpassword')]);
             $user->password=$request->get('newpassword');
             $user->save();
-            return view('admin_login');
+            return redirect()->back();
 
         } catch (\Throwable $th) {
             echo 'Sai tài khoản hoặc mất khẩu';

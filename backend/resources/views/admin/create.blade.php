@@ -11,6 +11,14 @@
     </div>
 
     <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Password </label>
+
+        <div class="col-sm-9">
+            <input type="text" id="form-field-1" placeholder="Enter password ..." class="col-xs-10 col-sm-5" name="password"/>
+        </div>
+    </div>
+
+    <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name </label>
 
         <div class="col-sm-9">
@@ -26,13 +34,6 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Password </label>
-
-        <div class="col-sm-9">
-            <input type="text" id="form-field-1" placeholder="Enter password ..." class="col-xs-10 col-sm-5" name="password"/>
-        </div>
-    </div>
     <div class="clearfix form-actions">
         <div class="col-md-offset-3 col-md-9">
             <button class="btn btn-info" type="submit">

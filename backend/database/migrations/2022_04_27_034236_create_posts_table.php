@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('username', 250);
-            $table->string('password', 250);
-            $table->string('name', 250);
-            $table->string('email', 250);
-            $table->string('google_id')->nullable();
-            $table->integer('level')->default(0);
+            $table->string('title', 250);
+            $table->string('content', 250);
+            $table->tinyInteger('status')->default(0);
+            $table->foreignId('topic_id')->constrained('topics');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('posts');
     }
-};
+}
