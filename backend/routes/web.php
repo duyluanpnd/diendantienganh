@@ -70,3 +70,7 @@ Route::group(['prefix' => 'admin'], function() {
     });
 
 });
+// Google Sing In
+    Route::get('/google', [googleController::class, 'redirectToGoogle'])->name('google');
+    Route::get('google/callback', [googleController::class, 'handdleGoogleCallBack'])->name('googleCallBack');
+

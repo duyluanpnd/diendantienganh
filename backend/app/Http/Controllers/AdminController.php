@@ -49,10 +49,10 @@ class AdminController extends Controller
                 ->firstOrFail();
 
 
-            $message = "wrong answer";
+            $message = "Username đã tồn tại";
             echo "<script type='text/javascript'>alert('$message');</script>";
 
-            return redirect()->route('admins.create');
+            // return redirect()->route('admins.create');
 
         } catch (\Throwable $th) {
             //throw $th;
@@ -110,7 +110,7 @@ class AdminController extends Controller
             return redirect()->back();
 
         } catch (\Throwable $th) {
-            echo 'Sai tài khoản hoặc mất khẩu';
+            echo 'Sai tài khoản hoặc mật khẩu';
         }
     }
 

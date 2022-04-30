@@ -19,11 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Google Sing In
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/google', [googleController::class, 'redirectToGoogle'])->name('google');
-    Route::post('/google/callback', [googleController::class, 'handdleGoogleCallBack'])->name('googleCallBack');
-});
+
+// Route::group(['middleware' => ['web']], function () {
+   
+// });
+
 
 
