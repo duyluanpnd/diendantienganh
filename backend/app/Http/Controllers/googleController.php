@@ -21,22 +21,21 @@ class googleController extends Controller
 
         parse_str($state, $result);
 
-        $googleUser = Socialite::driver('google')->stateless()->user();
+        $googleUser = Socialite::driver('google')->user();
 
         $admin = Admin::where('email', $googleUser->email)->first();
 
         if($admin){
-            dd(1);
-            throw new \Exception(__('google sign in email existed'));
+            // throw new \Exception(__('google sign in email existed'));
             
-            return redirect('login');
+            return redirect()->route('admins.index');
         }
         $admin= Admin::create([
             
                 // "username" => $googleUser->username,
                 "id" => $googleUser->id,    
-                "username" => '',
-                "password" => '',
+                "username" => $googleUser->name,
+                "password" => $googleUser->id,
                 "name" => $googleUser->name,
                 "email" => $googleUser->email,
                 "google_id" => $googleUser->id,
