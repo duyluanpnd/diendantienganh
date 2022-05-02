@@ -48,10 +48,12 @@ class AdminController extends Controller
                 ->where('username', $request->get('username'))
                 ->firstOrFail();
 
-
             $message = "Username đã tồn tại";
             echo "<script type='text/javascript'>alert('$message');</script>";
-
+            echo "<script language='javascript'>";
+            echo "alert('$message');";
+            echo 'window.location.replace("create");';
+            echo "</script>";
             // return redirect()->route('admins.create');
 
         } catch (\Throwable $th) {

@@ -74,7 +74,7 @@
     </li>
 
     <li class="">
-        <a href="index.php#" class="dropdown-toggle">
+        <a href="{{route('admins.index')}}" class="dropdown-toggle">
             <i class="menu-icon fa fa-list"></i>
             <span class="menu-text"> Quản lý nhân viên </span>
 
