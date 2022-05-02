@@ -19,7 +19,7 @@ class CheckLoginMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (!session()->has('level')) {
-            redirect()->route('login');
+            return redirect()->route('login');
             echo "chua dang nhap";
             exit();
         }
