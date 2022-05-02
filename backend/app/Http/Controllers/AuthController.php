@@ -23,7 +23,7 @@ class AuthController extends Controller
             return redirect()->route('admins.index');
         } catch (\Throwable $e) {
             $catch = $request->flash('username');
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error', __('Sai tài khoản hoặc mật khẩu'));
         }
     }
 }
