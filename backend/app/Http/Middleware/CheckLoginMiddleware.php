@@ -20,8 +20,6 @@ class CheckLoginMiddleware
     {
         if (!session()->has('level')) {
             return redirect()->route('login');
-            echo "chua dang nhap";
-            exit();
         }
         return $next($request);
     }

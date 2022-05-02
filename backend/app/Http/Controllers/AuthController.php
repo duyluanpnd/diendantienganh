@@ -22,6 +22,7 @@ class AuthController extends Controller
             session()->put('name', $user->name);
             return redirect()->route('admins.index');
         } catch (\Throwable $e) {
+            $catch = $request->flash('username');
             return redirect()->route('login');
         }
     }
