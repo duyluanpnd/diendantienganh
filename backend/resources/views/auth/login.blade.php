@@ -108,7 +108,7 @@
                         @csrf
                         <h2 class="pn-title">Đăng nhập tài khoản</h2>
                         <p class="text-center"><a href="#" class="pn-logo"><img src="{{asset('images/logo.png')}}" alt="" /></a></p>
-                        <p><input type="text" name="username" class="form-control" placeholder="Tên tài khoản hoặc Email"></p>
+                        <p><input type="text" name="username" class="form-control" placeholder="Tên tài khoản hoặc Email" value="{{old('username')}}"></p>
                         <p><input type="password" name="password" class="form-control" placeholder="Mật khẩu"></p>
                         <p class="text-right"><a href="#">Quên mật khẩu</a></p>
                         @if (session('error'))
