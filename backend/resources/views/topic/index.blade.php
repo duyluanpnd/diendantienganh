@@ -49,13 +49,9 @@
 {{--                        </form>--}}
 
                         @if (session()->get('level') === 1)
-                            <form action="{{route('topics.destroy', ['topic' => $topic->id])}}" method="post" style="float:left;">
-                                @method('DELETE')
-                                @csrf
-                                <button class="btn btn-xs btn-danger">
-                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                </button>
-                            </form>
+                            <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal{{$topic->id}}">
+                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                            </button>
                         @endif
                     </div>
                 </td>
@@ -100,6 +96,31 @@
         </tbody>
     </table>
 
+    <div class="modal fade" id="myModal{{$topic->id}}" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cảnh báo</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Xóa chủ đề này sẽ xóa tất cả chủ đề con bao gồm các bài viết thuộc chủ đề đó</p>
+                </div>
+                <div class="modal-footer">
+                    <form action="{{route('topics.destroy', ['topic' => $topic->id])}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Xóa</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 @endsection
+
+

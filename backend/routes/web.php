@@ -1,17 +1,14 @@
 <?php
 
-    use App\Http\Controllers\AddUserController;
     use App\Http\Controllers\AdminController;
     use App\Http\Controllers\AuthController;
-    use App\Http\Controllers\HomeController;
     use App\Http\Controllers\PostController;
     use App\Http\Controllers\TopicController;
     use App\Http\Controllers\UserController;
     use App\Http\Middleware\CheckLoginMiddleware;
     use App\Http\Middleware\CheckSuperAdminMiddleWare;
-    use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\googleController;
+    use App\Http\Controllers\CustomerController;
+    use App\Http\Controllers\googleController;
     use Illuminate\Support\Facades\Route;
 
 
