@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin'], function() {
             Route::post('/update1/{post}',[PostController::class,'update1'])->name('update1');
             Route::post('/update0/{post}',[PostController::class,'update0'])->name('update0');
             Route::delete('/delete/{post}', [PostController::class,'destroy'])->name('destroy');
+            Route::get('/create', [PostController::class, 'create'])->name('create');
+            Route::post('/store', [PostController::class, 'store'])->name('store');
         });
 
         Route::group(['prefix' => 'topic', 'as' => 'topics.'], function (){

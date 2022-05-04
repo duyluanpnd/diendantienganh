@@ -70,6 +70,15 @@
 
                 <b class="arrow"></b>
             </li>
+
+            <li class="">
+                <a href="{{route('posts.create')}}">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Thêm bài viết
+                </a>
+
+                <b class="arrow"></b>
+            </li>
         </ul>
     </li>
 

@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+
     <table id="sample-table-1" class="table table-striped table-bordered table-hover">
         <thead>
         <tr>

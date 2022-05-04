@@ -223,6 +223,7 @@
 {{--<!--[if lte IE 8]>--}}
 {{--  <script src="{{asset('js/excanvas.min.js')}}"></script>--}}
 {{--<![endif]-->--}}
+
 <script src="{{asset('js/jquery-ui.custom.min.js')}}"></script>
 <script src="{{asset('js/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/jquery.ui.touch-punch.min.js')}}"></script>
@@ -263,7 +264,6 @@
 
 <script src="{{asset('js/ace-elements.min.js')}}"></script>
 <script src="{{asset('js/ace.min.js')}}"></script>
-
 
 
 

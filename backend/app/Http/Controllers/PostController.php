@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Topic;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -25,6 +26,7 @@ class PostController extends Controller
             ->leftJoin('users', 'users.id', '=', 'posts.user_id')
             ->select('topics.name as topic_name', 'posts.*', 'users.name as user_name')
             ->where('users.id', $request->user)
+            ->orderBy('id', 'DESC')
             ->get();
 
         return view('post.index', [
@@ -39,6 +41,7 @@ class PostController extends Controller
             ->leftJoin('users', 'users.id', '=', 'posts.user_id')
             ->select('topics.name as topic_name', 'posts.*', 'users.name as user_name')
             ->where('posts.topic_id', $request->topic)
+            ->orderBy('id', 'DESC')
             ->get();
 
         return view('post.index', [
@@ -49,22 +52,31 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
+        $topics = Topic::query()->whereNotIn('parent_id', ['0'])->get();
+
+        return view('post.create', [
+            'topics' => $topics
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePostRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param  StorePostRequest  $request
+     * @return RedirectResponse
      */
-    public function store(StorePostRequest $request)
+    public function store(StorePostRequest $request): RedirectResponse
     {
-        //
+        $data =$request->validated();
+        $data['user_id'] = session()->get('id');
+
+        Post::query()->create($data);
+        return redirect()->back();
+
     }
 
     /**
@@ -128,6 +140,7 @@ class PostController extends Controller
     public function destroy(Post $post): RedirectResponse
     {
         Post::query()->where('id', $post->id)->delete();
+        session()->put('notify', "Thành công");
         return redirect()->back();
     }
 }

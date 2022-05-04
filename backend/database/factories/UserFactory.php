@@ -16,7 +16,10 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'username' => $this->faker->userName(),
-            'password' => $this->faker->password()
+            'password' => $this->faker->password(),
+            'email' => $this->faker->email,
+            'google_id' => $this->faker->randomDigit(),
+            'remember_token' => $this->faker->randomDigit()
         ];
     }
 }
