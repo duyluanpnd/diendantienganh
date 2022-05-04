@@ -10,8 +10,9 @@
     use App\Http\Middleware\CheckLoginMiddleware;
     use App\Http\Middleware\CheckSuperAdminMiddleWare;
     use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\googleController;
-use Illuminate\Support\Facades\Route;
+    use Illuminate\Support\Facades\Route;
 
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -70,6 +71,13 @@ Route::group(['prefix' => 'admin'], function() {
     });
 
 });
+
+// Customer
+Route::group(['prefix' => 'customer'], function (){
+    Route::get('/', [CustomerController::class, 'show'])->name('show');
+});
+
+
 // Google Sing In
     Route::get('/google', [googleController::class, 'redirectToGoogle'])->name('google');
     Route::get('google/callback', [googleController::class, 'handdleGoogleCallBack'])->name('googleCallBack');

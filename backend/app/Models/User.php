@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\Contracts\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-class User extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,8 +20,10 @@ class User extends Model
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'username',
         'google_id',
+        'password',
+        'remember_token',
     ];
 
     /**

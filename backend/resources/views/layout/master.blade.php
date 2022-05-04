@@ -258,7 +258,7 @@
 <script src="{{asset('js/ace-editable.min.js')}}"></script>
 <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('js/jquery.dataTables.bootstrap.js')}}"></script>
-<script src="{{asset('js/markdown.min.js">')}}</script>
+<script src="{{asset('js/markdown.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-markdown.min.js')}}"></script>
 
 <script src="{{asset('js/ace-elements.min.js')}}"></script>
