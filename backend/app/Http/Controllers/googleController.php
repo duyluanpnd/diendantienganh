@@ -23,13 +23,13 @@ class googleController extends Controller
 
         parse_str($state, $result);
 
-        $googleUser = Socialite::driver('google')->user();
+        $googleUser = Socialite::driver('google')->stateless()->user();
 
         $user = User::where('google_id', $googleUser->id)->first();
 
         if($user){
             // throw new \Exception(__('google sign in email existed'));
-            
+            auth()->login($user, true);
             return redirect()->route('show');
         }
         $user = User::create([
