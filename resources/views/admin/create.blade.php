@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout1.master')
 @section('content')
 <form class="form-horizontal" role="form" action="{{route('admins.store')}}" method="POST">
     @csrf

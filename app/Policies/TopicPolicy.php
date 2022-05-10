@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Topic;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class TopicPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Topic  $topic
+     * @param  \App\Models\Category  $topic
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Topic $topic)
+    public function view(User $user, Category $topic)
     {
         //
     }
@@ -48,10 +48,10 @@ class TopicPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Topic  $topic
+     * @param  \App\Models\Category  $topic
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Topic $topic)
+    public function update(User $user, Category $topic)
     {
         //
     }
@@ -60,10 +60,10 @@ class TopicPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Topic  $topic
+     * @param  \App\Models\Category  $topic
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Topic $topic)
+    public function delete(User $user, Category $topic)
     {
         //
     }
@@ -72,10 +72,10 @@ class TopicPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Topic  $topic
+     * @param  \App\Models\Category  $topic
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Topic $topic)
+    public function restore(User $user, Category $topic)
     {
         //
     }
@@ -84,10 +84,10 @@ class TopicPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Topic  $topic
+     * @param  \App\Models\Category  $topic
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Topic $topic)
+    public function forceDelete(User $user, Category $topic)
     {
         //
     }

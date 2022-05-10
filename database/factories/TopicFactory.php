@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Topic;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TopicFactory extends Factory
@@ -16,7 +16,7 @@ class TopicFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'parent_id' => Topic::query()->inRandomOrder()->value('id')
+            'parent_id' => Category::query()->inRandomOrder()->value('id')
         ];
     }
 }

@@ -177,7 +177,7 @@
                         <ul class="dropdown-menu dropdown-navbar">
                             <li>
                                 <a href="index.php#">
-                                    <img src="images/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                    <img src="{{asset('admin_template/images/avatar.png')}}" class="msg-photo" alt="Alex's Avatar" />
                                     <span class="msg-body">
                            <span class="msg-title">
                               <span class="blue">Alex:</span>
@@ -194,7 +194,7 @@
 
                             <li>
                                 <a href="index.php#">
-                                    <img src="images/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                    <img src="{{asset('admin_template/images/avatar3.png')}}" class="msg-photo" alt="Susan's Avatar" />
                                     <span class="msg-body">
                        <span class="msg-title">
                           <span class="blue">Susan:</span>
@@ -211,7 +211,7 @@
 
                             <li>
                                 <a href="index.php#">
-                                    <img src="images/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                    <img src="{{asset('admin_template/images/avatar4.png')}}" class="msg-photo" alt="Bob's Avatar" />
                                     <span class="msg-body">
                    <span class="msg-title">
                       <span class="blue">Bob:</span>
@@ -228,7 +228,7 @@
 
                             <li>
                                 <a href="index.php#">
-                                    <img src="images/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                    <img src="{{asset('admin_template/images/avatar2.png')}}" class="msg-photo" alt="Kate's Avatar" />
                                     <span class="msg-body">
                <span class="msg-title">
                   <span class="blue">Kate:</span>
@@ -245,7 +245,7 @@
 
                             <li>
                                 <a href="index.php#">
-                                    <img src="images/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                    <img src="{{asset('admin_template/images/avatar5.png')}}" class="msg-photo" alt="Fred's Avatar" />
                                     <span class="msg-body">
            <span class="msg-title">
               <span class="blue">Fred:</span>
@@ -273,7 +273,7 @@
 
             <li class="light-blue">
                 <a data-toggle="dropdown" href="index.php#" class="dropdown-toggle">
-                    <img class="nav-user-photo" src="images/user.jpg" alt="Jason's Photo" />
+                    <img class="nav-user-photo" src="{{asset('admin_template/images/user.jpg')}}" alt="Jason's Photo" />
                     <span class="user-info">
            <small>Welcome,</small>
            {{session()->get('name')}}

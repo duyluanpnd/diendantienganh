@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Topic;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +19,7 @@ class PostFactory extends Factory
             'title' => $this->faker->name(),
             'content' => $this->faker->name(),
             'status' => 0,
-            'topic_id' => Topic::query()->inRandomOrder()->value('id'),
+            'topic_id' => Category::query()->inRandomOrder()->value('id'),
             'user_id' => User::query()->inRandomOrder()->value('id')
         ];
     }

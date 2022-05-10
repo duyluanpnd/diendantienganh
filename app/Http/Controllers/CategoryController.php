@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\Topic;
+use App\Models\Category;
 use App\Http\Requests\StoreTopicRequest;
 use App\Http\Requests\UpdateTopicRequest;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,7 +13,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class TopicController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topics = Topic::query()->where('parent_id', 0)->get();
+        $topics = Category::query()->where('parent_id', 0)->get();
         return view('topic.index', [
             'topics' => $topics,
         ]);
@@ -31,7 +31,7 @@ class TopicController extends Controller
     public function subTopic(Request $request)
     {
         $parent_id = $request->topic;
-        $sub_topics = Topic::query()->where('parent_id', $parent_id)->get();
+        $sub_topics = Category::query()->where('parent_id', $parent_id)->get();
         return view('topic.sub_topic', [
             'sub_topics' => $sub_topics,
         ]);
@@ -61,10 +61,10 @@ class TopicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Topic  $topic
+     * @param  Category  $topic
      * @return Response
      */
-    public function show(Topic $topic)
+    public function show(Category $topic)
     {
         //
     }
@@ -72,10 +72,10 @@ class TopicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Topic  $topic
+     * @param  Category  $topic
      * @return Response
      */
-    public function edit(Topic $topic)
+    public function edit(Category $topic)
     {
         return view('topic.edit', [
             'topic' => $topic
@@ -86,10 +86,10 @@ class TopicController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateTopicRequest  $request
-     * @param  Topic  $topic
+     * @param  Category  $topic
      * @return Response
      */
-    public function update(UpdateTopicRequest $request, Topic $topic)
+    public function update(UpdateTopicRequest $request, Category $topic)
     {
         //
     }
@@ -97,25 +97,25 @@ class TopicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Topic  $topic
+     * @param  Category  $topic
      * @return RedirectResponse
      */
-    public function destroy(Topic $topic): RedirectResponse
+    public function destroy(Category $topic): RedirectResponse
     {
         $parent_id = $topic->id;
-        $child_topic = Topic::query()->where('parent_id', $parent_id)->get();
+        $child_topic = Category::query()->where('parent_id', $parent_id)->get();
         if (empty($child_topic->all())) {
-            Topic::query()->where('id', $topic->id)->delete();
+            Category::query()->where('id', $topic->id)->delete();
             return redirect()->route('topics.index');
         }
         return redirect()->route('topics.index');
     }
 
-    public function destroySubTopic(Topic $topic): RedirectResponse
+    public function destroySubTopic(Category $topic): RedirectResponse
     {
         $post_in_topic = Post::query()->where('topic_id', $topic->id)->get()->all();
         if (empty($post_in_topic)) {
-            Topic::query()->where('id', $topic->id)->delete();
+            Category::query()->where('id', $topic->id)->delete();
             return redirect()->back();
         }
         return redirect()->back();

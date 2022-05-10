@@ -33,10 +33,19 @@
 </div><!-- /.sidebar-shortcuts -->
 
 <ul class="nav nav-list">
-    <li class="active">
-        <a href="index.php">
+    <li class="{{ \Request::route()->getName() == 'admin.home' ? 'active' : '' }}">
+        <a href="{{route('admin.home')}}">
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text"> Dashboard </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+
+    <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : '' }}">
+        <a href="{{route('admin.get.list.category')}}">
+            <i class="menu-icon fa fa-tachometer"></i>
+            <span class="menu-text"> Quản lý danh mục </span>
         </a>
 
         <b class="arrow"></b>
@@ -54,7 +63,7 @@
 
         <ul class="submenu">
             <li class="">
-                <a href="{{route('topics.index')}}">
+                <a href="">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Theo danh mục
                 </a>
@@ -63,7 +72,7 @@
             </li>
 
             <li class="">
-                <a href="{{route('users.index')}}">
+                <a href="">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Theo người đăng
                 </a>
@@ -74,7 +83,7 @@
     </li>
 
     <li class="">
-        <a href="{{route('admins.index')}}" class="dropdown-toggle">
+        <a href="" class="dropdown-toggle">
             <i class="menu-icon fa fa-list"></i>
             <span class="menu-text"> Quản lý nhân viên </span>
 
@@ -85,7 +94,7 @@
 
         <ul class="submenu">
             <li class="">
-                <a href="{{route('admins.index')}}">
+                <a href="{{route('admin.home')}}">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Trang chủ
                 </a>
@@ -94,7 +103,7 @@
             </li>
 
             <li class="">
-                <a href="{{route('admins.create')}}">
+                <a href="">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Thêm nhân viên
                 </a>
@@ -102,7 +111,7 @@
                 <b class="arrow"></b>
             </li>
             <li class="">
-                <a href="{{route('admins.edit')}}">
+                <a href="">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Đổi mật khẩu
                 </a>
@@ -124,7 +133,7 @@
 
         <ul class="submenu">
             <li class="">
-                <a href="{{route('users.index')}}">
+                <a href="">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Trang chủ
                 </a>

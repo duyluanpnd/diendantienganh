@@ -11,27 +11,27 @@ class AdminAuthController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function getLogin()
     {
-        dd(1);
         return view('admin::auth.login');
     }
 
     public function postLogin(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        if (\Auth::guard('admins')->attempt($credentials)) {
+
+        if (Auth::guard('admins')->attempt($credentials)) {
             // Authentication passed...
-            return redirect()->route('admin.home')->with('success','Đăng nhập thành công');;
+            return redirect()->route('admin.home')->with('success', 'Đăng nhập thành công');
         }
-        return redirect()->back()->with('danger','Kiểm tra lại thông tin đăng nhập');
+
+        return redirect()->back()->with('danger', 'Kiểm tra lại thông tin đăng nhập');
     }
     public function getLogoutAdmin()
     {
-
-        \Auth::guard('admins')->logout();
-        return redirect()->route('admin.login')->with('success','Đăng xuất thành công');
+        Auth::guard('admins')->logout();
+        return redirect()->route('admin.login')->with('success', 'Đăng xuất thành công');
     }
 }

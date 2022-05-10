@@ -8,8 +8,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/login.css')}}" />
+    <link rel="stylesheet" href="{{asset('fe_template/css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('fe_template/css/login.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -17,10 +17,10 @@
 </head>
 <body class="webp_support">
     <header>
-        <div class="pn-quancao pn-image"><img src="{{asset('images/banner_top.jpg')}}" alt="" /></div>
+        <div class="pn-quancao pn-image"><img src="{{asset('fe_template/images/banner_top.jpg')}}" alt="" /></div>
         <div class="pn-header">
             <div class="container">
-                <a href="#" class="pn-logo"><img src="{{asset('images/logo.png')}}" alt="DIỄN ĐÀN TIẾNG ANH" /></a>
+                <a href="#" class="pn-logo"><img src="{{asset('fe_template/images/logo.png')}}" alt="DIỄN ĐÀN TIẾNG ANH" /></a>
                 <div class="pn-header-right">
                     <button class="pn-icon-menu">
                         <span></span><span></span><span></span>
@@ -107,7 +107,7 @@
                     <form action="{{route('process_login')}}" method="post">
                         @csrf
                         <h2 class="pn-title">Đăng nhập tài khoản</h2>
-                        <p class="text-center"><a href="#" class="pn-logo"><img src="{{asset('images/logo.png')}}" alt="" /></a></p>
+                        <p class="text-center"><a href="#" class="pn-logo"><img src="{{asset('fe_template/images/logo.png')}}" alt="" /></a></p>
                         <p><input type="text" name="username" class="form-control" placeholder="Tên tài khoản hoặc Email" value="{{old('username')}}"></p>
                         <p><input type="password" name="password" class="form-control" placeholder="Mật khẩu"></p>
                         <p class="text-right"><a href="#">Quên mật khẩu</a></p>
@@ -136,7 +136,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-xs-12">
-                <a href="#" class="pn-logo-ft"><img src="images/logo.png" alt="Diễn đàn tiếng anh" /></a>
+                <a href="#" class="pn-logo-ft"><img src="{{asset('fe_template/images/logo.png')}}" alt="Diễn đàn tiếng anh" /></a>
             </div>
             <div class="col-sm-4 col-xs-6">
                 <h6 class="pn-title-ft">Diễn đàn tiếng Anh</h6>
